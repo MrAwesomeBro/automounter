@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# A little script to bypass the issue that NFS shares do not get mounted properly
+# or not at all on boot up. Make sure to setup your r.local like this:
+# 
+# /path/to/automounter
+# 
+# 28.12.2016 - Denis Walther
+
+# Define your stuff here:
+nfs_server="NFS_Server_Hostname"
+nfs_dir="/path/on/NFS_Server"
+mountpoint="/mnt/nfs"
+mount_options="-t nfs -o sec=krb5"
+
+# Do what it has to:
+mount $mount_options $nfs_server:$nfs_dir $mountpoint
