@@ -9,6 +9,11 @@ automounted on boot-up you will have to find an alternative. Use this.
 * Copy the script to your wanted path (I suggest to use /opt/scripts)
 * Add this line to your /etc/rc.local
 
-    /opt/scripts/automounter
+     /opt/scripts/automounter
 
+* Give the script the executive permissions:
+
+     chmod +x /opt/scripts
+
+* Reboot and check *df -h*.
 * That's it. Enjoy.
